@@ -18,7 +18,7 @@ const corsOptions = {
 }
 app.use(cors(corsOptions))
 
-const PORT = 8080
+const PORT = process.env.PORT || 8000
 
 app.get("/", (req, res) => {
     res.send("<h1>Hello server</h1>")
