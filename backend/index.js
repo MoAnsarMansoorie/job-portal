@@ -1,6 +1,10 @@
 import express from "express"
 import cookieParser from "cookie-parser"
 import cors from "cors"
+import dotenv from "dotenv"
+import connectDb from "./db/connectDb.js"
+
+dotenv.config({})
 
 const app = express()
 
@@ -21,5 +25,6 @@ app.get("/", (req, res) => {
 })
 
 app.listen(PORT, () => {
+    connectDb()
     console.log(`Server is listening at port localhost:${PORT}`)
 })
