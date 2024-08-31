@@ -5,6 +5,7 @@ import jwt from "jsonwebtoken"
 export const registerController = async (req, res) => {
     try {
         const {fullName, email, phoneNumber, password, role} = req.body
+        console.log(fullName, email, phoneNumber, password, role)
 
         if(!fullName || !email || !phoneNumber || !password || !role) {
             return res.status(401).json({
